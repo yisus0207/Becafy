@@ -44,7 +44,7 @@ export default function Header() {
 
       <nav style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
         <Link href="/" className="nav-link">Inicio</Link>
-        <Link href="/" className="nav-link">Becas</Link>
+        <Link href="/explorar" className="nav-link">Becas</Link>
         {user ? (
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
             <Link href="/profile" className="nav-link" style={{

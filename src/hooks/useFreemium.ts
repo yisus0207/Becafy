@@ -24,7 +24,7 @@ export const useFreemium = () => {
   };
 
   const getLimit = () => {
-    if (!user) return 3;
+    if (!user) return 1;
     if (user.is_premium) return Infinity;
     return 10;
   };

@@ -60,26 +60,26 @@ export default function FreemiumGate({ type, remaining, onClose }: FreemiumGateP
           zIndex: -1
         }} />
 
-        <div style={{ fontSize: '4rem', marginBottom: '0.5rem' }}>✨</div>
+        <div style={{ fontSize: '4rem', marginBottom: '0.5rem' }}>🔐</div>
         <h2 style={{ fontSize: '2rem', fontWeight: 800, maxWidth: '500px' }}>
           {type === 'anonymous' 
-            ? '¡Has encontrado oportunidades increíbles!' 
+            ? '¡Desbloquea el Acceso Beta!' 
             : '¡Te has tomado en serio tu futuro!'}
         </h2>
         
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '600px', lineHeight: 1.6 }}>
           {type === 'anonymous' 
-            ? 'Para seguir viendo más becas y organizar tus favoritas, crea una cuenta gratuita en segundos.'
-            : 'Has alcanzado el límite de 10 becas para cuentas gratuitas. Desbloquea acceso ILIMITADO a toda nuestra base de datos.'}
+            ? 'Estás a un paso de ver toda la información. Únete a nuestra lista de espera exclusiva y obtén acceso total al buscador.'
+            : 'Has alcanzado el límite de visualizaciones. Desbloquea acceso ILIMITADO uniéndote a nuestra lista de fundadores.'}
         </p>
 
         {type === 'anonymous' ? (
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link href="/auth/register" className="btn btn-primary" style={{ padding: '1rem 2rem' }}>
-              <Sparkles size={18} /> Crear cuenta gratis
+            <Link href="/" className="btn btn-primary" style={{ padding: '1rem 2rem' }}>
+              <Sparkles size={18} /> Unirme a la Lista de Espera
             </Link>
             <Link href="/auth/login" className="btn btn-secondary" style={{ padding: '1rem 2rem' }}>
-              Iniciar sesión
+              Ya tengo acceso
             </Link>
           </div>
         ) : (
@@ -95,7 +95,7 @@ export default function FreemiumGate({ type, remaining, onClose }: FreemiumGateP
 
         <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
           {type === 'anonymous' 
-            ? 'Únete a 5,000+ estudiantes buscando su futuro hoy.'
+            ? 'Únete a 1,200+ estudiantes en espera hoy.'
             : 'Acceso a becas exclusivas y mentorías personalizadas.'}
         </div>
       </div>

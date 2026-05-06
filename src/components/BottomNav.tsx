@@ -9,7 +9,7 @@ export default function BottomNav() {
   const pathname = usePathname();
 
   const navItems = [
-    { label: 'Explorar', icon: Search, path: '/' },
+    { label: 'Explorar', icon: Search, path: '/explorar' },
     { label: 'Match', icon: Heart, path: '/profile?tab=matches' },
     { label: 'Seguimiento', icon: ClipboardList, path: '/profile?tab=seguimiento' },
     { label: 'Perfil', icon: User, path: '/profile' },
