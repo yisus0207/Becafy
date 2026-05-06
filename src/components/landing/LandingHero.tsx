@@ -18,8 +18,8 @@ export default function LandingHero() {
   };
 
   return (
-    <div style={{ 
-      minHeight: '100vh', display: 'flex', flexDirection: 'column', 
+    <div style={{
+      minHeight: '100vh', display: 'flex', flexDirection: 'column',
       alignItems: 'center', justifyContent: 'center', padding: '6rem 1.5rem',
       position: 'relative', overflow: 'hidden'
     }}>
@@ -33,7 +33,7 @@ export default function LandingHero() {
         background: 'var(--accent-secondary)', filter: 'blur(150px)', opacity: 0.1, zIndex: -1
       }} />
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -41,11 +41,11 @@ export default function LandingHero() {
         style={{ textAlign: 'center', maxWidth: '900px' }}
       >
         {/* Badge */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
-          style={{ 
+          style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
             background: 'rgba(255,255,255,0.03)', padding: '8px 20px',
             borderRadius: '100px', border: '1px solid rgba(255,255,255,0.08)',
@@ -56,37 +56,37 @@ export default function LandingHero() {
           <Sparkles size={14} /> FASE BETA · ACCESO EXCLUSIVO
         </motion.div>
 
-        <h1 style={{ 
-          fontSize: 'clamp(2.5rem, 8vw, 5rem)', fontWeight: 800, 
+        <h1 style={{
+          fontSize: 'clamp(2.5rem, 8vw, 5rem)', fontWeight: 800,
           lineHeight: 1, marginBottom: '2rem', letterSpacing: '-0.04em'
         }}>
           Tu Futuro no es un Sueño, <br />
           <span className="text-sparkle">Es tu Próximo Match</span>
         </h1>
 
-        <p style={{ 
-          fontSize: '1.25rem', color: 'var(--text-secondary)', 
+        <p style={{
+          fontSize: '1.25rem', color: 'var(--text-secondary)',
           maxWidth: '700px', margin: '0 auto 3.5rem', lineHeight: 1.6
         }}>
-          Hackeamos el sistema de becas para que dejes de buscar y empieces a aplicar. 
+          Hackeamos el sistema de becas para que dejes de buscar y empieces a aplicar.
           La IA que conecta tu perfil con las mejores universidades del mundo.
         </p>
 
         {/* Waitlist Form */}
         {!isSubmitted ? (
-          <motion.form 
+          <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            style={{ 
-              maxWidth: '550px', margin: '0 auto', display: 'flex', 
+            style={{
+              maxWidth: '550px', margin: '0 auto', display: 'flex',
               flexDirection: 'column', gap: '1rem', position: 'relative'
             }}
           >
             <div style={{ position: 'relative' }}>
-              <input 
-                type="email" 
+              <input
+                type="email"
                 placeholder="Tu mejor correo electrónico..."
                 required
                 value={email}
@@ -99,7 +99,7 @@ export default function LandingHero() {
                 }}
                 className="waitlist-input"
               />
-              <button 
+              <button
                 type="submit"
                 style={{
                   position: 'absolute', right: '0.6rem', top: '0.6rem', bottom: '0.6rem',
@@ -118,10 +118,10 @@ export default function LandingHero() {
             </p>
           </motion.form>
         ) : (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            style={{ 
+            style={{
               background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.2)',
               padding: '2rem', borderRadius: '24px', maxWidth: '500px', margin: '0 auto'
             }}
@@ -129,10 +129,10 @@ export default function LandingHero() {
             <CheckCircle2 size={40} color="#10b981" style={{ marginBottom: '1rem' }} />
             <h3 style={{ marginBottom: '0.5rem' }}>¡Estás dentro, {email.split('@')[0]}!</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-              Te avisaremos en cuanto abramos las puertas de la Beta. 
+              Te avisaremos en cuanto abramos las puertas de la Beta.
               Mientras tanto, ¡mira lo que estamos construyendo!
             </p>
-            <Link href="/explorar" style={{ 
+            <Link href="/explorar" style={{
               display: 'inline-flex', marginTop: '1.5rem', color: 'var(--accent-primary)',
               fontWeight: 700, textDecoration: 'none', fontSize: '0.9rem', gap: '6px',
               alignItems: 'center'
@@ -144,15 +144,15 @@ export default function LandingHero() {
 
         {/* Sneak Peek Button */}
         {!isSubmitted && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
             style={{ marginTop: '4rem' }}
           >
-            <Link href="/explorar" style={{ 
-              color: 'var(--text-muted)', textDecoration: 'none', 
-              fontSize: '0.9rem', fontWeight: 600, display: 'flex', 
+            <Link href="/explorar" style={{
+              color: 'var(--text-muted)', textDecoration: 'none',
+              fontSize: '0.9rem', fontWeight: 600, display: 'flex',
               alignItems: 'center', justifyContent: 'center', gap: '8px',
               opacity: 0.7, transition: 'opacity 0.3s'
             }} className="hover-opacity">
@@ -163,12 +163,12 @@ export default function LandingHero() {
       </motion.div>
 
       {/* Features Grid */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.8 }}
-        style={{ 
-          marginTop: '8rem', display: 'grid', 
+        style={{
+          marginTop: '8rem', display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
           gap: '2rem', width: '100%', maxWidth: '1200px'
         }}
@@ -179,9 +179,9 @@ export default function LandingHero() {
           { icon: Users, title: 'Comunidad Elite', desc: 'Consejos de quienes ya ganaron sus becas.' }
         ].map((f, i) => (
           <div key={i} className="glass-v2" style={{ padding: '2rem', textAlign: 'left' }}>
-            <div style={{ 
-              width: '45px', height: '45px', borderRadius: '12px', 
-              background: 'rgba(255,255,255,0.05)', display: 'flex', 
+            <div style={{
+              width: '45px', height: '45px', borderRadius: '12px',
+              background: 'rgba(255,255,255,0.05)', display: 'flex',
               alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem',
               color: 'var(--accent-primary)'
             }}>

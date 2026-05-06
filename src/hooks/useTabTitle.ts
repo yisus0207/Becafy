@@ -8,7 +8,7 @@ export const useTabTitle = () => {
 
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'hidden') {
-        document.title = '¡No te vayas! Tu beca te extraña 😢';
+        document.title = '¡Espera! Tu futuro espera 😢';
       } else {
         document.title = originalTitle;
       }
