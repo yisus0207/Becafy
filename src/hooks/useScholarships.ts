@@ -87,18 +87,19 @@ export const useScholarships = () => {
       coordinates: (() => {
         try {
           const raw = row.coordinates;
-          if (Array.isArray(raw)) return raw;
+          if (Array.isArray(raw) && raw.length === 2) return raw as [number, number];
           if (typeof raw === 'string') {
             const parsed = JSON.parse(raw);
-            return Array.isArray(parsed) ? parsed : [5, -75];
+            if (Array.isArray(parsed) && parsed.length === 2) return parsed as [number, number];
+            return [5, -75] as [number, number];
           }
           if (raw && typeof raw === 'object' && 'lat' in raw && 'lng' in raw) {
-            return [raw.lat, raw.lng];
+            return [raw.lat, raw.lng] as [number, number];
           }
-          return [5, -75]; // Default center
+          return [5, -75] as [number, number]; // Default center
         } catch (e) {
           console.error("Error parsing coordinates for", row.title, e);
-          return [5, -75];
+          return [5, -75] as [number, number];
         }
       })()
     }));

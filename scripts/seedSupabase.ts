@@ -4,7 +4,11 @@ import fs from 'fs';
 import path from 'path';
 import { mockScholarships } from '../src/data/mockScholarships';
 
-dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
+try {
+  dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
+} catch (e) {
+  // Ignore error if .env.local doesn't exist (e.g. in Vercel)
+}
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;

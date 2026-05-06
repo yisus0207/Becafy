@@ -14,10 +14,23 @@ import ScholarshipCard from '@/components/ScholarshipCard';
 import { CAREER_FIELDS } from '@/data/constants';
 import confetti from 'canvas-confetti';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Suspense } from 'react';
 
 type TabType = 'perfil' | 'matches' | 'seguimiento';
 
 export default function ProfilePage() {
+  return (
+    <Suspense fallback={
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--grad-main)' }}>
+        <p style={{ color: 'var(--text-secondary)' }}>Cargando perfil...</p>
+      </div>
+    }>
+      <ProfileContent />
+    </Suspense>
+  );
+}
+
+function ProfileContent() {
   const { user, updateProfile, logout, toggleRequirement } = useAuth();
   const { showToast } = useToast();
   const { scholarships } = useScholarships();
