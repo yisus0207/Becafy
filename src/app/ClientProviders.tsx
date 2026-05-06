@@ -4,6 +4,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import { ToastProvider } from "@/context/ToastContext";
 import { useTabTitle } from "@/hooks/useTabTitle";
 import BottomNav from "@/components/BottomNav";
+import { Suspense } from 'react';
 
 function GlobalHooks() {
   useTabTitle();
@@ -18,9 +19,11 @@ export default function ClientProviders({
   return (
     <AuthProvider>
       <ToastProvider>
-        <GlobalHooks />
-        {children}
-        <BottomNav />
+        <Suspense fallback={null}>
+          <GlobalHooks />
+          {children}
+          <BottomNav />
+        </Suspense>
       </ToastProvider>
     </AuthProvider>
   );
